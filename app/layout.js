@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Photofeed",
+  title: "PhotoFeed",
   description: "A cool photo feed app",
 };
 
@@ -23,7 +24,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Navbar />
+        <div className="container my-4 lg:my-8">{children}</div>
       </body>
     </html>
   );
